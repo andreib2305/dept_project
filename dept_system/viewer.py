@@ -11,6 +11,8 @@ def show_text(title: str, text: str, window: bool = True) -> None:
         root = tk.Tk()
         root.title(title)
         root.geometry("920x640")
+        root.attributes('-topmost', True)
+        root.after(100, lambda: root.attributes('-topmost', False))
         mono = font.Font(family="Consolas" if "Consolas" in font.families() else "Courier New", size=10)
         box = scrolledtext.ScrolledText(root, wrap="none", font=mono)
         xbar = tk.Scrollbar(root, orient="horizontal", command=box.xview)
