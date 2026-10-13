@@ -1,5 +1,4 @@
 
-
 def show_text(title: str, text: str, window: bool = True) -> None:
     if not window:
         print(f"\n=== {title} ===\n{text}")
